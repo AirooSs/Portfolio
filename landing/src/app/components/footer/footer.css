@@ -1,0 +1,63 @@
+.pie-pagina {
+    background: #0b0b0f;
+    color: #fff;
+    padding: 60px 20px 20px;
+}
+
+.contenedor-footer {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.bloque h3,
+.bloque h4 {
+    margin-bottom: 12px;
+}
+
+.bloque p {
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* enlaces normales */
+.bloque a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.75;
+    transition: 0.2s;
+}
+
+.bloque a:hover {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+/* redes */
+.red {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* iconos */
+.red i {
+    font-size: 16px;
+}
+
+/* inferior */
+.inferior {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.6;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+}
