@@ -1,1 +1,63 @@
-<p>proyectos works!</p>
+<section class="proyectos">
+
+    <div class="proyectos-bg">
+        <div class="orbe orbe-1"></div>
+        <div class="orbe orbe-2"></div>
+        <div class="grid-lineas"></div>
+    </div>
+
+    <div class="proyectos-contenedor">
+
+        <div class="proyectos-cabecera">
+            <span class="proyectos-badge">Proyectos</span>
+            <h1 class="proyectos-titulo">Lo que he construido</h1>
+            <p class="proyectos-subtitulo">
+                Proyectos académicos, personales y de prácticas en empresa.
+                Cada uno representa algo que he aprendido de verdad.
+            </p>
+        </div>
+
+        <div class="proyectos-grid">
+
+            @for (proyecto of proyectos; track proyecto.nombre) {
+            <div class="proyecto-card" [class.destacado]="proyecto.destacado">
+
+                <div class="card-cabecera">
+                    <div class="card-icono" [class]="'card-icono-' + proyecto.color">
+                        <i class="bi" [class]="proyecto.icono"></i>
+                    </div>
+                    <span class="card-tipo">{{ proyecto.tipo }}</span>
+                </div>
+
+                <h3 class="card-nombre">{{ proyecto.nombre }}</h3>
+                <p class="card-descripcion">{{ proyecto.descripcion }}</p>
+
+                <div class="card-tags">
+                    @for (tag of proyecto.tags; track tag) {
+                    <span class="tag">{{ tag }}</span>
+                    }
+                </div>
+
+                <div class="card-footer">
+                    @if (proyecto.github) {
+                    <a [href]="proyecto.github" target="_blank" class="card-link">
+                        <i class="bi bi-github"></i>
+                        Ver repositorio
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+                    } @else {
+                    <span class="card-privado">
+                        <i class="bi bi-lock"></i>
+                        Repositorio privado
+                    </span>
+                    }
+                </div>
+
+            </div>
+            }
+
+        </div>
+
+    </div>
+
+</section>

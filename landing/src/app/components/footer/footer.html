@@ -1,46 +1,60 @@
-<footer class="pie-pagina">
+<footer class="footer">
 
-    <div class="contenedor-footer">
+    <div class="footer-cuerpo">
 
-        <!-- Marca -->
-        <div class="bloque">
-            <h3>Francisco José Soria</h3>
-            <p>Desarrollador web enfocado en crear experiencias modernas y limpias.</p>
+        <div class="footer-marca">
+            <div class="footer-logo">
+                <span class="logo-icono">FJ</span>
+                <span class="logo-texto">Francisco José Soria</span>
+            </div>
+            <p class="footer-descripcion">
+                Desarrollador Full Stack especializado en Angular y Java Spring Boot.
+                Apasionado por crear aplicaciones limpias y bien estructuradas.
+            </p>
+            <div class="footer-badge">
+                <span class="pulso"></span>
+                Disponible para proyectos
+            </div>
         </div>
 
-        <!-- Enlaces -->
-        <div class="bloque">
-            <h4>Enlaces</h4>
-            <a href="#">Sobre mí</a>
-            <a href="#">Proyectos</a>
-            <a href="#">Contacto</a>
+        <div class="footer-col">
+            <h4 class="footer-titulo">Navegación</h4>
+            <nav class="footer-nav">
+                <a routerLink="/home">Sobre mí</a>
+                <a routerLink="/proyectos">Proyectos</a>
+                <a routerLink="/contacto">Contacto</a>
+            </nav>
         </div>
 
-        <!-- Redes -->
-        <div class="bloque">
-            <h4>Redes</h4>
-
-            <a href="#" class="red">
-                <i class="bi bi-linkedin"></i>
-                LinkedIn
-            </a>
-
-            <a href="#" class="red">
-                <i class="bi bi-github"></i>
-                GitHub
-            </a>
-
-            <a href="#" class="red">
-                <i class="bi bi-instagram"></i>
-                Instagram
-            </a>
-
+        <div class="footer-col">
+            <h4 class="footer-titulo">Encuéntrame</h4>
+            <div class="footer-redes">
+                <a href="https://www.linkedin.com/in/fran-soria-nav/" class="red-social" target="_blank">
+                    <i class="bi bi-linkedin"></i>
+                    <span>LinkedIn</span>
+                    <i class="bi bi-arrow-up-right flecha"></i>
+                </a>
+                <a href="https://github.com/AirooSs" class="red-social" target="_blank">
+                    <i class="bi bi-github"></i>
+                    <span>GitHub</span>
+                    <i class="bi bi-arrow-up-right flecha"></i>
+                </a>
+                <a href="mailto:franciscosorianavarrete@gmail.com" class="red-social">
+                    <i class="bi bi-envelope"></i>
+                    <span>Email</span>
+                    <i class="bi bi-arrow-up-right flecha"></i>
+                </a>
+            </div>
         </div>
 
     </div>
 
-    <div class="inferior">
-        © 2026 Mi Portfolio
+    <div class="footer-inferior">
+        <span>© 2026 Francisco José Soria. Hecho con Angular.</span>
+        <span class="footer-tech">
+            <i class="bi bi-lightning-charge-fill"></i>
+            Angular + Spring Boot
+        </span>
     </div>
 
 </footer>

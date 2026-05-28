@@ -1,17 +1,11 @@
-<app-header></app-header>
+<div class="layout">
 
-<main class="container py-5">
-    <router-outlet></router-outlet>
+    <app-header></app-header>
 
-    <div class="text-center">
-        <h1 class="display-4 text-primary">
-            Bootstrap funcionando 🚀
-        </h1>
+    <main class="contenido">
+        <router-outlet></router-outlet>
+    </main>
 
-        <button class="btn btn-success mt-3">
-            Botón Bootstrap
-        </button>
-    </div>
-</main>
+    <app-footer></app-footer>
 
-<app-footer></app-footer>
+</div>

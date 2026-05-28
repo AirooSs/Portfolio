@@ -1,0 +1,245 @@
+.contacto {
+    min-height: calc(100vh - 73px);
+    display: flex;
+    align-items: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contacto-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.orbe {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.2;
+}
+
+.orbe-1 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, #6366f1, transparent);
+    top: -100px;
+    right: -100px;
+    animation: derivar 10s ease-in-out infinite alternate;
+}
+
+.orbe-2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #8b5cf6, transparent);
+    bottom: -80px;
+    left: 10%;
+    animation: derivar 14s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes derivar {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(30px, 20px);
+    }
+}
+
+.grid-lineas {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+}
+
+.contacto-contenedor {
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+}
+
+/* Cabecera */
+.contacto-cabecera {
+    text-align: center;
+    animation: aparecer 0.5s ease both;
+}
+
+.contacto-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-acento-suave);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    color: var(--color-acento-brillo);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+}
+
+.contacto-titulo {
+    font-family: var(--fuente-display);
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--color-texto);
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.contacto-subtitulo {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-texto-suave);
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Cards */
+.contacto-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    animation: aparecer 0.5s ease 0.15s both;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
+    padding: 22px 24px;
+    text-decoration: none;
+    transition: all 0.25s;
+    color: var(--color-texto);
+}
+
+.contact-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card:hover .card-flecha {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+.card-icono {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--color-acento-suave);
+    color: var(--color-acento-brillo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.card-icono-linkedin {
+    background: rgba(10, 102, 194, 0.15);
+    color: #0a66c2;
+}
+
+.card-icono-github {
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--color-texto);
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.card-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-texto-suave);
+}
+
+.card-valor {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-texto);
+}
+
+.card-flecha {
+    font-size: 16px;
+    color: var(--color-texto-suave);
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+/* Footer */
+.contacto-footer {
+    animation: aparecer 0.5s ease 0.3s both;
+}
+
+.disponibilidad {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.18);
+    color: #4ade80;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 999px;
+}
+
+.pulso {
+    width: 7px;
+    height: 7px;
+    background: #4ade80;
+    border-radius: 50%;
+    animation: pulsar 2s ease-in-out infinite;
+}
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.75);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

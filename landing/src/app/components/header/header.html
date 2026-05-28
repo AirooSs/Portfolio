@@ -1,21 +1,28 @@
-<nav class="barra-navegacion-moderna">
-    <div class="contenedor">
+<nav class="navbar" [class.scrolled]="scrolled">
+    <div class="navbar-inner">
 
-        <!-- Izquierda: logo -->
-        <a class="marca" href="#">
-            Mi Portfolio
+        <a class="logo" routerLink="/home">
+            <span class="logo-icono">FJ</span>
+            <span class="logo-texto">Soria</span>
         </a>
 
-        <!-- Centro: menú -->
-        <ul class="menu">
-            <li><a href="#">Sobre mí</a></li>
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="#">Contacto</a></li>
+        <ul class="nav-menu">
+            <li>
+                <a routerLink="/home" routerLinkActive="activo" [routerLinkActiveOptions]="{exact:true}">
+                    Sobre mí
+                </a>
+            </li>
+            <li>
+                <a routerLink="/proyectos" routerLinkActive="activo">
+                    Proyectos
+                </a>
+            </li>
+            
         </ul>
 
-        <!-- Derecha: botón (opcional) -->
-        <a class="boton" href="#">
-            CV
+        <a routerLink="/contacto" class="cta-btn">
+            <span>Contacto</span>
+            <i class="bi bi-arrow-right"></i>
         </a>
 
     </div>
