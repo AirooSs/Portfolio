@@ -1,23 +1,24 @@
-<header class="navbar" [class.scrolled]="scrolled">
+<header class="site-header" [class.scrolled]="scrolled">
     <div class="nav-inner">
-
-        <a class="logo" (click)="ir('inicio')">
-            <span class="logo-sq">FJ</span>
-            <span class="logo-name">Soria</span>
+        <a class="brand" href="#inicio" (click)="ir('inicio', $event)" aria-label="Soria, inicio">
+            <span class="brand-name">soria<span>.</span></span>
+            <span class="brand-role">Software developer</span>
         </a>
-        <ul class="nav-links" [class.open]="menuAbierto">
-            <li><a (click)="ir('inicio')" [class.activo]="seccionActiva === 'inicio'">Sobre mí</a></li>
-            <li><a (click)="ir('proyectos')" [class.activo]="seccionActiva === 'proyectos'">Proyectos</a></li>
-            <li><a (click)="ir('contacto')" [class.activo]="seccionActiva === 'contacto'">Contacto</a></li>
-        </ul>
-
-        <a (click)="ir('contacto')" class="nav-cta">Contacto</a>
-
-        <button class="burger" (click)="toggle()" [class.open]="menuAbierto" aria-label="Menú">
-            <span></span><span></span><span></span>
+        <nav id="main-nav" class="nav-links" [class.open]="menuAbierto" aria-label="Navegación principal">
+            @for (seccion of secciones; track seccion.id; let i = $index) {
+            <a [href]="'#' + seccion.id" (click)="ir(seccion.id, $event)" [class.activo]="seccionActiva === seccion.id"
+                [class.contact-link]="seccion.id === 'contacto'"
+                [attr.aria-current]="seccionActiva === seccion.id ? 'location' : null">
+                <span class="nav-number">0{{ i + 1 }}</span>{{ seccion.nombre }}
+                @if (seccion.id === 'contacto') { <i class="bi bi-arrow-up-right" aria-hidden="true"></i> }
+            </a>
+            }
+        </nav>
+        <button type="button" class="burger" [class.open]="menuAbierto" (click)="toggle()"
+            [attr.aria-expanded]="menuAbierto" aria-controls="main-nav"
+            [attr.aria-label]="menuAbierto ? 'Cerrar menú' : 'Abrir menú'">
+            <span></span><span></span>
         </button>
-
     </div>
 </header>
-
-<div class="nav-overlay" [class.visible]="menuAbierto" (click)="toggle()"></div>
+<div class="nav-overlay" [class.visible]="menuAbierto" (click)="cerrarMenu()" aria-hidden="true"></div>

@@ -1,72 +1,121 @@
-<section class="hero">
-
-    <div class="hero-left">
-
-        <div class="badge">
-            <span class="dot"></span>
-            Disponible para trabajar
-        </div>
-
-        <h1 class="headline">
-            Desarrollador<br>
-            Full Stack Junior<br>
-            <span class="headline-accent">Angular · Spring Boot</span>
-        </h1>
-
-        <p class="desc">
-            Técnico Superior en DAW con pasión por el backend en Spring Boot
-            y el frontend en Angular. Durante mis prácticas en Mimesis Lab
-            trabajé con NestJS, Azure OpenAI y CI/CD en una plataforma clínica real.
-            Busco mi primera oportunidad para aportar valor en proyectos reales.
-        </p>
-
-        <div class="skills">
-            <span class="skill"><i class="devicon-angularjs-plain colored"></i>Angular</span>
-            <span class="skill"><i class="devicon-java-plain colored"></i>Java</span>
-            <span class="skill"><i class="devicon-spring-plain colored"></i>Spring Boot</span>
-            <span class="skill"><i class="devicon-typescript-plain colored"></i>TypeScript</span>
-            <span class="skill"><i class="devicon-mysql-plain colored"></i>MySQL</span>
-            <span class="skill"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
-            <span class="skill"><i class="devicon-azure-plain colored"></i>Azure</span>
-            <span class="skill"><i class="devicon-docker-plain colored"></i>Docker</span>
-            <span class="skill"><i class="devicon-git-plain colored"></i>Git</span>
-            <span class="skill"><i class="devicon-python-plain colored"></i>Python</span>
-        </div>
-
-        <div class="acciones">
-            <a (click)="irAProyectos()" class="btn-primary" style="cursor:pointer">
-                Ver proyectos <i class="bi bi-arrow-right"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/fran-soria-nav/" class="btn-secondary" target="_blank">
-                <i class="bi bi-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/AirooSs" class="btn-secondary" target="_blank">
-                <i class="bi bi-github"></i> GitHub
-            </a>
-        </div>
-
-    </div>
-
-    <div class="hero-right">
-        <div class="code-card">
-            <div class="code-bar">
-                <span class="cb-r"></span>
-                <span class="cb-y"></span>
-                <span class="cb-g"></span>
+<section class="hero" aria-labelledby="hero-title">
+    <div class="hero-main">
+        <p class="availability"><span class="dot" aria-hidden="true"></span> Disponible para trabajar</p>
+        <div class="hero-grid">
+            <div class="intro">
+                <h1 id="hero-title">Francisco José<br><span>Soria.</span></h1>
+                <p class="role">Desarrollador Full Stack Junior</p>
+                <p class="desc">Técnico Superior en Desarrollo de Aplicaciones Web, con experiencia en frontend y
+                    backend. Especial interés en Java, Spring Boot y arquitectura de software. Busco seguir creciendo
+                    como desarrollador y aportar valor en proyectos reales.</p>
+                <div class="acciones">
+                    <a href="#proyectos" class="hero-primary">Ver proyectos <i class="bi bi-arrow-down-right"
+                            aria-hidden="true"></i></a>
+                    <a href="/CV_FranciscoJoseSoria_DAW.pdf" download class="hero-secondary">Descargar CV <i
+                            class="bi bi-download" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <pre class="code-body"><span class="c-cm">// Francisco José Soria</span>
-<span class="c-kw">const</span> <span class="c-fn">dev</span> <span class="c-wh">= &#123;</span>
-  <span class="c-pr">rol</span><span class="c-wh">:</span>        <span class="c-st">'Full Stack Junior'</span><span class="c-wh">,</span>
-  <span class="c-pr">backend</span><span class="c-wh">:</span>    <span class="c-st">'Spring Boot'</span><span class="c-wh">,</span>
-  <span class="c-pr">frontend</span><span class="c-wh">:</span>   <span class="c-st">'Angular'</span><span class="c-wh">,</span>
-  <span class="c-pr">db</span><span class="c-wh">:</span>         <span class="c-st">'PostgreSQL'</span><span class="c-wh">,</span>
-  <span class="c-pr">disponible</span><span class="c-wh">:</span> <span class="c-nu">true</span>
-<span class="c-wh">&#125;</span></pre>
+            <aside class="stack" aria-label="Áreas de conocimiento">
+                <p class="eyebrow">Áreas de conocimiento</p>
+                <div><span>01 / Backend</span><strong>Java · Spring Boot · Node.js</strong></div>
+                <div><span>02 / Frontend</span><strong>Angular · React · TypeScript</strong></div>
+                <div><span>03 / Bases de datos</span><strong>PostgreSQL · MySQL</strong></div>
+                <div><span>04 / Arquitectura</span><strong>API REST · Arquitectura hexagonal</strong></div>
+            </aside>
         </div>
-
-        <a href="/CV_FranciscoJoseSoria_DAW.pdf" download class="btn-cv">
-            <i class="bi bi-download"></i> Descargar CV
-        </a>
     </div>
+    <div class="hero-footer">
+        <span>España · Desarrollo de software</span>
+        <div class="socials">
+            <a href="https://github.com/AirooSs" target="_blank" rel="noopener noreferrer">GitHub <i
+                    class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/fran-soria-nav/" target="_blank" rel="noopener noreferrer">LinkedIn <i
+                    class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
 
+<section class="about" aria-labelledby="about-title">
+    <div class="about-label"><span>01 / Perfil</span><span>Sobre mí</span></div>
+    <div class="about-grid">
+        <div>
+            <h2 id="about-title">Curiosidad por aprender.<br>Interés por construir.</h2>
+            <p>Soy Técnico Superior en Desarrollo de Aplicaciones Web. Me interesa especialmente el desarrollo backend,
+                aunque disfruto trabajando en todas las capas de una aplicación.</p>
+            <p>Durante mis seis meses de prácticas en Mimesis Lab participé en el desarrollo de una plataforma clínica,
+                trabajando en la integración de funcionalidades de inteligencia artificial, transcripciones y
+                comunicación entre frontend y backend.</p>
+            <p>Actualmente sigo desarrollando proyectos propios para profundizar en Java, Spring Boot y arquitectura de
+                software. Busco una oportunidad profesional en la que aprender, colaborar y aportar valor.</p>
+        </div>
+        <figure class="about-photo">
+            <img src="/img/mi_foto.png" alt="Retrato de Francisco José Soria" loading="lazy" decoding="async">
+            <figcaption>Francisco José Soria · Desarrollador web</figcaption>
+        </figure>
+    </div>
+    <div class="about-facts">
+        <div><strong>DAW</strong><span>Formación profesional superior</span></div>
+        <div><strong>6 meses</strong><span>Prácticas en desarrollo web</span></div>
+        <div><strong>Full Stack</strong><span>Especial interés en backend</span></div>
+    </div>
+</section>
+
+<section class="skills-section" aria-labelledby="skills-title">
+    <div class="skills-label"><span>Competencias técnicas</span><span>Stack</span></div>
+    <h2 id="skills-title">Tecnologías y herramientas.</h2>
+    <p class="skills-intro">Tecnologías utilizadas en mis proyectos y conocimientos que sigo desarrollando.</p>
+    <div class="skills-grid">
+        <article class="skill-group"><span class="skill-index">01</span>
+            <h3>Backend</h3>
+            <ul aria-label="Backend">
+                <li>Java</li>
+                <li>Spring Boot</li>
+                <li>Node.js</li>
+                <li>NestJS</li>
+            </ul>
+        </article>
+        <article class="skill-group"><span class="skill-index">02</span>
+            <h3>Frontend</h3>
+            <ul aria-label="Frontend">
+                <li>Angular</li>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Bootstrap</li>
+                <li>Vite</li>
+            </ul>
+        </article>
+        <article class="skill-group"><span class="skill-index">03</span>
+            <h3>Bases de datos</h3>
+            <ul aria-label="Bases de datos">
+                <li>PostgreSQL</li>
+                <li>MySQL</li>
+            </ul>
+        </article>
+        <article class="skill-group"><span class="skill-index">04</span>
+            <h3>Arquitectura y calidad</h3>
+            <ul aria-label="Arquitectura y calidad">
+                <li>API REST</li>
+                <li>Arquitectura hexagonal</li>
+                <li>DDD</li>
+                <li>JUnit</li>
+                <li>Mockito</li>
+            </ul>
+        </article>
+        <article class="skill-group"><span class="skill-index">05</span>
+            <h3>Herramientas</h3>
+            <ul aria-label="Herramientas">
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>Docker</li>
+                <li>Swagger</li>
+            </ul>
+        </article>
+        <article class="skill-group"><span class="skill-index">06</span>
+            <h3>Otros conocimientos</h3>
+            <ul aria-label="Otros conocimientos">
+                <li>Azure</li>
+                <li>Python</li>
+            </ul>
+        </article>
+    </div>
 </section>

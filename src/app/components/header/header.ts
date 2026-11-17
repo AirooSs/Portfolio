@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,37 +8,47 @@ import { CommonModule } from '@angular/common';
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
   scrolled = false;
   menuAbierto = false;
   seccionActiva = 'inicio';
+  readonly secciones = [
+    { id: 'inicio', nombre: 'Sobre mí' },
+    { id: 'proyectos', nombre: 'Proyectos' },
+    { id: 'contacto', nombre: 'Contacto' }
+  ];
+
+  ngAfterViewInit() { this.onScroll(); }
 
   @HostListener('window:scroll')
   onScroll() {
     this.scrolled = window.scrollY > 10;
-    this.detectarSeccion();
-  }
-  //Hacemos metodo para detectar la seccion  activa y cambiar el color del menu
-  detectarSeccion() {
-    const secciones = ['inicio', 'proyectos', 'contacto'];
-    for (const id of secciones) {
-      const el = document.getElementById(id);
-      if (!el) continue;
-      const rect = el.getBoundingClientRect();
-      if (rect.top <= 100 && rect.bottom > 100) {
-        this.seccionActiva = id;
-        break;
-      }
+    const limite = 100;
+    let activa = 'inicio';
+    for (const seccion of this.secciones) {
+      const el = document.getElementById(seccion.id);
+      if (el && el.getBoundingClientRect().top <= limite) activa = seccion.id;
     }
+    if (window.scrollY > 0 && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) activa = 'contacto';
+    this.seccionActiva = activa;
   }
-  //Hacemos metodo para hacer scroll a la seccion correspondiente
-  ir(id: string) {
+
+  @HostListener('window:resize')
+  onResize() { if (window.innerWidth > 760) this.menuAbierto = false; }
+
+  @HostListener('document:keydown.escape')
+  cerrarMenu() { this.menuAbierto = false; }
+
+  ir(id: string, event?: Event) {
+    event?.preventDefault();
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      const header = document.querySelector('app-header header');
+      const top = el.getBoundingClientRect().top + window.scrollY - (header?.getBoundingClientRect().height ?? 72);
+      window.scrollTo({ top: Math.max(0, top), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    }
     this.menuAbierto = false;
   }
-  //Hacemos metodo para abrir y cerrar el menu
-  toggle() {
-    this.menuAbierto = !this.menuAbierto;
-  }
+
+  toggle() { this.menuAbierto = !this.menuAbierto; }
 }

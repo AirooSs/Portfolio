@@ -1,4 +1,4 @@
-import { Component, ElementRef, QueryList, ViewChildren, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChildren, AfterViewInit, ChangeDetectorRef, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,6 +14,21 @@ export class ProyectosComponent implements AfterViewInit {
 
   proyectos = [
     {
+      nombre: 'Gestión de Tareas — Fullstack',
+      descripcion: 'Aplicación web para la creación, organización y seguimiento de tareas. Backend basado en una API REST con Arquitectura Hexagonal y DDD, integrado con un frontend en React. Validado mediante 25 tests automatizados y pruebas funcionales.',
+      tipo: 'Fullstack',
+      tags: ['Java 21', 'Spring Boot 4', 'React 19', 'Vite 8', 'PostgreSQL', 'Bootstrap 5', 'API REST', 'Arquitectura Hexagonal', 'DDD'],
+      icono: 'bi-layout-split',
+      color: 'blue',
+      github: 'https://github.com/AirooSs/gestion-tareas-fullstack',
+      imgs: [
+        { src: '/gestion_tareas_fullstack/Inicio.PNG', alt: 'Inicio' },
+        { src: '/gestion_tareas_fullstack/crear_tarea.PNG', alt: 'Crear tarea' },
+        { src: '/gestion_tareas_fullstack/tarea_creada.PNG', alt: 'Tarea creada' },
+        { src: '/gestion_tareas_fullstack/estructura_backend.PNG', alt: 'Estructura del backend' }
+      ]
+    },
+    {
       nombre: 'Training Microservices',
       descripcion: 'Arquitectura de microservicios con dos servicios independientes (usuarios y entrenamientos) que se comunican entre sí por HTTP con RestClient. Contenerizado con Docker.',
       tipo: 'Backend',
@@ -26,21 +41,6 @@ export class ProyectosComponent implements AfterViewInit {
         { src: '/training-microservices/dockerps.PNG', alt: 'Contenedores Docker' },
         { src: '/training-microservices/post_usuarios.PNG', alt: 'Endpoint usuarios' },
         { src: '/training-microservices/post_entrenamientos.PNG', alt: 'Endpoint entrenamientos' }
-      ]
-    },
-    {
-      nombre: 'Gestión de Tareas — Fullstack',
-      descripcion: 'Backend con Arquitectura Hexagonal y DDD en Spring Boot conectado a un frontend en React (Vite). Primera experiencia con React viniendo de Angular.',
-      tipo: 'Fullstack',
-      tags: ['React', 'Vite', 'Java', 'Spring Boot', 'PostgreSQL'],
-      icono: 'bi-layout-split',
-      color: 'blue',
-      github: 'https://github.com/AirooSs/gestion-tareas-fullstack',
-      imgs: [
-        { src: '/gestion_tareas_fullstack/Inicio.PNG', alt: 'Inicio' },
-        { src: '/gestion_tareas_fullstack/crear_tarea.PNG', alt: 'Crear tarea' },
-        { src: '/gestion_tareas_fullstack/tarea_creada.PNG', alt: 'Tarea creada' },
-        { src: '/gestion_tareas_fullstack/estructura_backend.PNG', alt: 'Estructura del backend' }
       ]
     },
     {
@@ -140,18 +140,19 @@ export class ProyectosComponent implements AfterViewInit {
     });
 
     el.addEventListener('click', e => {
-      if (moved) {
+      if (moved && e.detail !== 0) {
         e.stopImmediatePropagation();
         e.preventDefault();
+        moved = false;
       }
     }, true);
 
-    let tx = 0, ts = 0;
-    el.addEventListener('touchstart', e => { tx = e.touches[0].pageX; ts = el.scrollLeft; });
-    el.addEventListener('touchmove', e => {
-      el.scrollLeft = ts + (tx - e.touches[0].pageX) * 1.5;
-    });
+    // El desplazamiento táctil se gestiona de forma nativa en el navegador.
+
   }
+
+  @HostListener('document:keydown.escape')
+  cerrarConEscape() { this.cerrar(); }
 
   abrir(src: string) { this.imagenSeleccionada = src; }
   cerrar() { this.imagenSeleccionada = null; }

@@ -1,54 +1,87 @@
-*,
-*::before,
-*::after {
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* Identidad visual */
+:root {
+    color-scheme: dark;
+    --bg: #09090b;
+    --bg-1: #101012;
+    --bg-2: #18181b;
+    --bg-3: #222225;
+    --border: rgba(255, 255, 255, 0.09);
+    --border-mid: rgba(255, 255, 255, 0.16);
+    --blue: #60a5fa;
+    --blue-dim: rgba(96, 165, 250, 0.12);
+    --blue-glow: rgba(96, 165, 250, 0.18);
+    --green: #4ade80;
+    --green-dim: rgba(74, 222, 128, 0.1);
+    --t1: #f4f4f5;
+    --t2: #a1a1aa;
+    --t3: #92929c;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Space Grotesk', var(--font);
+    --page-width: 1200px;
+    --page-gutter: clamp(16px, 5vw, 72px);
+    --section-space: clamp(64px, 10vw, 144px);
+    --radius: 8px;
+}
+
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-:root {
-    --bg: #000000;
-    --bg-1: #0a0a0a;
-    --bg-2: #111111;
-    --bg-3: #1a1a1a;
-    --border: rgba(255, 255, 255, 0.08);
-    --border-mid: rgba(255, 255, 255, 0.12);
-    --blue: #2997ff;
-    --blue-dim: rgba(41, 151, 255, 0.12);
-    --blue-glow: rgba(41, 151, 255, 0.25);
-    --green: #30d158;
-    --green-dim: rgba(48, 209, 88, 0.1);
-    --t1: #f5f5f7;
-    --t2: #a1a1a6;
-    --t3: #6e6e73;
-    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
+    min-width: 0;
+    min-height: 100vh;
     background: var(--bg);
     color: var(--t1);
     font-family: var(--font);
+    font-size: 1rem;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
 }
 
-::-webkit-scrollbar {
-    width: 5px;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.15;
+    letter-spacing: -0.035em;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--bg);
+img, video {
+    max-width: 100%;
 }
 
-::-webkit-scrollbar-thumb {
-    background: rgba(41, 151, 255, 0.3);
-    border-radius: 3px;
+button, input, textarea, select {
+    font-family: inherit;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--blue);
+:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 4px;
 }
+
+::selection {
+    background: #60a5fa;
+    color: #09090b;
+}
+
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #71717a; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+} 
