@@ -7,10 +7,8 @@
     max-width: var(--page-width, 1200px);
     margin-inline: auto;
     padding: clamp(40px, 6vw, 80px) var(--page-gutter) 0;
-    min-height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     gap: clamp(28px, 4vw, 52px);
 }
 
@@ -174,18 +172,11 @@ h1 span {
 }
 
 @media (max-width: 800px) {
-    .hero {
-        min-height: auto;
-    }
-
     .hero-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 28px;
     }
 
-    .stack {
-        max-width: 100%;
-    }
 }
 
 @media (max-width: 480px) {
@@ -288,7 +279,6 @@ h1 span {
 }
 
 .about-photo {
-    margin: 0;
     min-width: 0;
     max-width: 340px;
     justify-self: end;
@@ -298,7 +288,6 @@ h1 span {
 .about-photo img {
     display: block;
     width: 100%;
-    height: auto;
     border: 1px solid var(--border);
     border-radius: 4px;
 }
@@ -399,8 +388,6 @@ h1 span {
 
 .skill-group ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 4px 0;

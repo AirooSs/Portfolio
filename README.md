@@ -6,9 +6,9 @@ diseño inspirado en la estética de Apple y despliegue en producción con HTTPS
 
 ## Stack
 
-- Angular 17 (standalone components)
+- Angular 21 (standalone components)
 - TypeScript
-- CSS puro con variables (sin frameworks de estilos)
+- CSS con variables y JavaScript de Bootstrap
 - Bootstrap Icons + Devicon
 
 ## Características
@@ -60,7 +60,7 @@ Los archivos compilados se generan en `dist/landing/browser`.
 
 ## Despliegue
 
-Desplegado en un VPS Linux (IONOS) con Nginx y certificado SSL de Let's Encrypt.
+El proyecto genera una aplicación estática en `dist/landing/browser` para su despliegue.
 
 ## Contacto
 

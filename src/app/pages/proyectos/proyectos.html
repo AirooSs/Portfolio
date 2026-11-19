@@ -7,7 +7,7 @@
   @for (p of proyectos; track p.nombre; let i = $index) {
   <article class="project" [class.reverse]="i % 2 === 1" [class.no-media]="!p.imgs.length">
     <div class="project-info">
-      <div class="meta">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }} / {{ p.tipo }}</div>
+      <div class="meta">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }} / {{ p.tipo }}{{ i === 0 ? ' · Proyecto destacado' : '' }}</div>
           <h3>{{ p.nombre }}</h3>
           <p>{{ p.descripcion }}</p>
           @if (p.caracteristicas) {

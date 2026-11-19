@@ -15,9 +15,9 @@ export class ProyectosComponent implements AfterViewInit {
   proyectos = [
     {
       nombre: 'Gestor de tareas Full Stack',
-      descripcion: 'Aplicación de gestión de proyectos y tareas desarrollada con Arquitectura Hexagonal y principios de Domain-Driven Design (DDD). Incluye seguridad, sesiones independientes, persistencia de datos, pruebas automatizadas y despliegue en la nube.',
+      descripcion: 'Nació como una API REST con Arquitectura Hexagonal y Domain-Driven Design (DDD) y evolucionó hasta convertirse en una aplicación Full Stack para gestionar proyectos y tareas. Incluye seguridad, persistencia de datos, pruebas automatizadas y despliegue en la nube.',
       tipo: 'Fullstack',
-      tags: ['Java 21', 'Spring Boot', 'Spring Security', 'React', 'Bootstrap', 'PostgreSQL', 'Docker', 'Flyway', 'JUnit y Mockito'],
+      tags: ['Java 21', 'Spring Boot', 'Spring Security', 'React', 'Vite', 'Bootstrap', 'PostgreSQL', 'Docker', 'Flyway', 'JUnit y Mockito'],
       caracteristicas: ['Arquitectura Hexagonal y DDD', 'API REST', 'Aislamiento de sesiones y control de acceso', 'Pruebas unitarias y de integración', 'Documentación técnica', 'Despliegue en Render, Vercel y Neon'],
       demo: 'https://gestion-tareas-fullstack.vercel.app/',
       icono: 'bi-layout-split',
@@ -42,21 +42,6 @@ export class ProyectosComponent implements AfterViewInit {
         { src: '/training-microservices/dockerps.PNG', alt: 'Contenedores Docker' },
         { src: '/training-microservices/post_usuarios.PNG', alt: 'Endpoint usuarios' },
         { src: '/training-microservices/post_entrenamientos.PNG', alt: 'Endpoint entrenamientos' }
-      ]
-    },
-    {
-      nombre: 'Gestión de Tareas — API Hexagonal',
-      descripcion: 'API REST con Arquitectura Hexagonal y DDD. Tests con JUnit y Mockito, documentación con Swagger.',
-      tipo: 'Backend',
-      tags: ['Java', 'Spring Boot', 'PostgreSQL', 'JUnit', 'Mockito', 'Swagger'],
-      icono: 'bi-diagram-3',
-      color: 'blue',
-      github: 'https://github.com/AirooSs/Gestion-tareas-hexagonal',
-      imgs: [
-        { src: '/Hexagonal/Arquitectura.PNG', alt: 'Arquitectura' },
-        { src: '/Hexagonal/estructura.PNG', alt: 'Estructura' },
-        { src: '/Hexagonal/repo.PNG', alt: 'Repositorio' },
-        { src: '/Hexagonal/swagger.PNG', alt: 'Swagger' }
       ]
     },
     {
