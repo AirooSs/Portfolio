@@ -10,9 +10,21 @@
       <div class="meta">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }} / {{ p.tipo }}</div>
           <h3>{{ p.nombre }}</h3>
           <p>{{ p.descripcion }}</p>
+          @if (p.caracteristicas) {
+          <ul class="features" aria-label="Características técnicas">
+            @for (caracteristica of p.caracteristicas; track caracteristica) { <li>{{ caracteristica }}</li> }
+          </ul>
+          }
           <ul class="tech" aria-label="Tecnologías">
             @for (tag of p.tags; track tag) { <li>{{ tag }}</li> }
           </ul>
+          @if (p.demo) {
+          <div class="demo-info">
+            <span class="demo-status">Demo disponible</span>
+            <div><a class="demo-button" [href]="p.demo" target="_blank" rel="noopener noreferrer">Ver demo</a></div>
+            <p class="demo-note">El primer acceso puede tardar unos instantes debido al alojamiento gratuito.</p>
+          </div>
+          }
           @if (p.github) {
           <a class="repo" [href]="p.github" target="_blank" rel="noopener noreferrer">Ver repositorio <i
               class="bi bi-arrow-up-right" aria-hidden="true"></i></a>

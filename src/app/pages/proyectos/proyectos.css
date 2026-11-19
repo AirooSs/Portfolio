@@ -107,6 +107,67 @@
     color: var(--t3);
 }
 
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0;
+    color: var(--t2);
+    line-height: 1.6;
+    font-size: .9rem;
+}
+
+.features li::before {
+    content: '\00b7';
+    color: var(--blue);
+    margin-right: 9px;
+}
+
+.demo-info {
+    margin-bottom: 8px;
+}
+
+.demo-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--t2);
+    font-size: .82rem;
+    margin-bottom: 12px;
+}
+
+.demo-status::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #7ac9a4;
+}
+
+.demo-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border: 1px solid var(--border-mid);
+    border-radius: 5px;
+    color: var(--t1);
+    text-decoration: none;
+    transition: color .2s, border-color .2s;
+}
+
+.demo-button:hover {
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+.project-info .demo-note {
+    color: var(--t3);
+    font-size: .82rem;
+    line-height: 1.5;
+    margin: 10px 0 0;
+}
+
 .repo,
 .private {
     display: inline-flex;

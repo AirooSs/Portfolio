@@ -14,18 +14,19 @@ export class ProyectosComponent implements AfterViewInit {
 
   proyectos = [
     {
-      nombre: 'Gestión de Tareas — Fullstack',
-      descripcion: 'Aplicación web para la creación, organización y seguimiento de tareas. Backend basado en una API REST con Arquitectura Hexagonal y DDD, integrado con un frontend en React. Validado mediante 25 tests automatizados y pruebas funcionales.',
+      nombre: 'Gestor de tareas Full Stack',
+      descripcion: 'Aplicación de gestión de proyectos y tareas desarrollada con Arquitectura Hexagonal y principios de Domain-Driven Design (DDD). Incluye seguridad, sesiones independientes, persistencia de datos, pruebas automatizadas y despliegue en la nube.',
       tipo: 'Fullstack',
-      tags: ['Java 21', 'Spring Boot 4', 'React 19', 'Vite 8', 'PostgreSQL', 'Bootstrap 5', 'API REST', 'Arquitectura Hexagonal', 'DDD'],
+      tags: ['Java 21', 'Spring Boot', 'Spring Security', 'React', 'Bootstrap', 'PostgreSQL', 'Docker', 'Flyway', 'JUnit y Mockito'],
+      caracteristicas: ['Arquitectura Hexagonal y DDD', 'API REST', 'Aislamiento de sesiones y control de acceso', 'Pruebas unitarias y de integración', 'Documentación técnica', 'Despliegue en Render, Vercel y Neon'],
+      demo: 'https://gestion-tareas-fullstack.vercel.app/',
       icono: 'bi-layout-split',
       color: 'blue',
       github: 'https://github.com/AirooSs/gestion-tareas-fullstack',
       imgs: [
-        { src: '/gestion_tareas_fullstack/Inicio.PNG', alt: 'Inicio' },
-        { src: '/gestion_tareas_fullstack/crear_tarea.PNG', alt: 'Crear tarea' },
-        { src: '/gestion_tareas_fullstack/tarea_creada.PNG', alt: 'Tarea creada' },
-        { src: '/gestion_tareas_fullstack/estructura_backend.PNG', alt: 'Estructura del backend' }
+        { src: '/gestion_tareas_fullstack/project-dashboard.png', alt: 'Panel de proyectos y tareas' },
+        { src: '/gestion_tareas_fullstack/project-creation.png', alt: 'Creación de un proyecto' },
+        { src: '/gestion_tareas_fullstack/project-delete-confirmation.png', alt: 'Confirmación de eliminación de un proyecto' }
       ]
     },
     {
